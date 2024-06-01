@@ -1,0 +1,27 @@
+header {
+    background-color: var(--color-white);
+}
+
+.nav-items {
+    list-style: none;
+}
+
+.nav-items li a {
+    font-family: var(--font-sans);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: center;
+    color: var(--dark-slate);
+}
+
+.first-name {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25.5px;
+    text-align: left;
+    color: var(--light-green);
+
+}
