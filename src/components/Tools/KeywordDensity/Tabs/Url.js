@@ -6,8 +6,11 @@ import LinkIcon from "../../../../assets/icons/LinkIcon";
 import DownIcon from "../../../../assets/icons/DownIcon";
 import WordIcon from "../../../../assets/icons/WordIcon";
 import RefreshIconImage from "../../../../assets/images/refresh-icon.png";
+import Modal from 'react-bootstrap/Modal';
+import UploadPopup from "../UploadFilePopup";
 
 export default function Url() {
+    const [modalShow, setModalShow] = React.useState(false);
     return (
         <div className="url_tab">
             <Form>
@@ -53,7 +56,7 @@ export default function Url() {
                             <div className="ad_btn clear">
                                 <span><img src={RefreshIconImage} alt=""/> </span> Clear
                             </div>
-                            <div className="ad_btn upload">
+                            <div className="ad_btn upload" onClick={() => setModalShow(true)}>
                                 <span><DownIcon/></span> Upload
                             </div>
                         </div>
@@ -66,6 +69,12 @@ export default function Url() {
                     <div className="btn-wrapper text-center my-3">
                         <Button size="lg" className="submit-btn m-3 border-0">Check Keyword Density</Button>
                     </div>
+                    <UploadPopup
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+
+                    />
+
                 </div>
             </Form>
         </div>

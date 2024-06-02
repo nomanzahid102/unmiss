@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import Container from 'react-bootstrap/Container';
 import './Header.css'
 import Nav from '../Nav'
@@ -7,6 +7,10 @@ import Sun from "../../assets/icons/Sun";
 import UserImage from "../../assets/images/Image.png"
 
 function Header(props) {
+    const [isActive, setActive] = useState("false");
+    const ToggleClass = () => {
+        setActive(!isActive);
+    };
     return (
         <Fragment>
             <header className='py-3'>
@@ -34,7 +38,18 @@ function Header(props) {
                                     <img src={UserImage} alt="User First Name"/>
                                 </div>
                             </div>
+                            <div className="mobile-menu">
+                                <div className="hamburger" onClick={ToggleClass}>
+                                    <div className={"hamburger__icon " + (isActive ? "" : "active")}>
+                                        <div className="hamburger__line hamburger__line--small one"></div>
+                                        <div className="hamburger__line hamburger__line--full"></div>
+                                        <div className="hamburger__line hamburger__line--small two"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
                     </nav>
                 </Container>
             </header>
